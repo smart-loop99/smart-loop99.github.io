@@ -317,12 +317,14 @@
             <p class="text-xl text-gray-500 dark:text-gray-400 text-center mb-10">Fill out the form below to request a personalized demo or discuss deployment options.</p>
             
             <!-- 
-                HINT: To make this form send a message to your email, you need to change the 'action' attribute 
-                below from the placeholder value to 'mailto:your.email@example.com' (replacing the email 
-                with your actual address). This will prompt the user's local email client (like Outlook or Gmail) 
-                to open a new message pre-filled with the form data.
+                HOSTING NOTE: Since this is a static site (like GitHub Pages), you cannot run a backend server to process forms.
+                We highly recommend using a free third-party service like Formspree or Netlify Forms to receive email submissions.
+                
+                ACTION NEEDED:
+                1. Sign up for Formspree (or similar).
+                2. Replace the placeholder URL below with your unique Formspree endpoint (e.g., https://formspree.io/f/xbjnopqo).
             -->
-            <form action="mailto:contact@smartloop.com" method="POST" enctype="text/plain" class="space-y-6 card-bg p-8 rounded-xl shadow-xl border-t-4 border-primary dark:bg-dark-card dark:shadow-2xl">
+            <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-6 card-bg p-8 rounded-xl shadow-xl border-t-4 border-primary dark:bg-dark-card dark:shadow-2xl">
                 <div>
                     <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 </div>
