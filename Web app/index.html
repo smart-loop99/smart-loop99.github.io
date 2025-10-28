@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acme Dev Solutions - Custom Software Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font and base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc; /* Light background */
+            color: #1e293b; /* Dark text */
+            scroll-behavior: smooth;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3b82f6', // Blue-500
+                        'secondary': '#10b981', // Emerald-500
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-primary tracking-tight">
+                AcmeDev
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-primary transition duration-150 font-medium">Services</a>
+                <a href="#process" class="text-gray-600 hover:text-primary transition duration-150 font-medium">Process</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-primary transition duration-150 font-medium">Portfolio</a>
+                <a href="#contact" class="text-white bg-secondary px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition duration-150">Get Quote</a>
+            </nav>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-gray-600 hover:text-primary focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-100">
+            <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 border-b">Services</a>
+            <a href="#process" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 border-b">Process</a>
+            <a href="#portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 border-b">Portfolio</a>
+            <a href="#contact" class="block px-4 py-2 text-white bg-primary text-center hover:bg-blue-600">Get Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-24 md:py-32 bg-white text-center" id="hero">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight mb-4">
+                Build the Future. <span class="text-primary block md:inline">Scale Your Vision.</span>
+            </h1>
+            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+                Custom software development that drives innovation, optimizes operations, and delivers exceptional user experiences.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="cta-button inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-xl shadow-lg text-white bg-primary hover:bg-blue-600">
+                    Start Your Project Today
+                </a>
+                <a href="#services" class="cta-button inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-base font-bold rounded-xl text-gray-700 bg-white hover:bg-gray-50 shadow-md">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 md:py-28" id="services">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-4">Our Software Capabilities</h2>
+            <p class="text-xl text-gray-500 text-center mb-16">Expert solutions for every layer of your digital stack.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1: Web Development -->
+                <div class="card-hover bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary">
+                    <div class="text-primary mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Full-Stack Web Development</h3>
+                    <p class="text-gray-600">Building scalable and responsive web applications from the ground up, covering everything from powerful backend APIs to engaging front-end user interfaces (React, Vue, Node.js, Python).</p>
+                </div>
+
+                <!-- Service Card 2: Cloud & DevOps -->
+                <div class="card-hover bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary">
+                    <div class="text-secondary mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Cloud & Infrastructure</h3>
+                    <p class="text-gray-600">Leveraging AWS, Azure, and Google Cloud for resilient, serverless, and highly-available applications. We handle deployment, monitoring, and scaling (DevOps).</p>
+                </div>
+
+                <!-- Service Card 3: Consulting -->
+                <div class="card-hover bg-white p-8 rounded-xl shadow-lg border-t-4 border-yellow-500">
+                    <div class="text-yellow-500 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l2-2 2 2v13M9 19h12a2 2 0 002-2v-5a2 2 0 00-2-2H9v-5a2 2 0 00-2-2v5a2 2 0 002 2H3a2 2 0 00-2 2v5a2 2 0 002 2h6M9 19a2 2 0 002 2h2a2 2 0 002-2m-4 0v-5m-4 5v-5"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Technical Consulting & Audit</h3>
+                    <p class="text-gray-600">Providing expert guidance on architecture reviews, technology stack selection, performance optimization, and project planning to ensure long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 md:py-28 bg-gray-50" id="process">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-4">Our Agile Development Process</h2>
+            <p class="text-xl text-gray-500 text-center mb-16">A transparent, iterative approach ensuring quality and alignment at every stage.</p>
+
+            <div class="relative max-w-6xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="hidden md:block absolute h-full w-1 bg-primary left-1/2 transform -translate-x-1/2 z-0"></div>
+
+                <!-- Step 1: Discover -->
+                <div class="flex flex-col md:flex-row md:justify-start items-center relative mb-12">
+                    <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                        <h3 class="text-2xl font-bold text-primary mb-2">1. Discovery & Planning</h3>
+                        <p class="text-gray-600">We define scope, gather requirements, create mockups, and establish a clear project roadmap and technology stack.</p>
+                    </div>
+                    <div class="absolute right-1/2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white border-4 border-primary rounded-full z-10 hidden md:block"></div>
+                </div>
+
+                <!-- Step 2: Develop -->
+                <div class="flex flex-col md:flex-row md:justify-end items-center relative mb-12">
+                    <div class="absolute right-1/2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white border-4 border-primary rounded-full z-10 hidden md:block"></div>
+                    <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-primary mb-2">2. Iterative Development (Sprints)</h3>
+                        <p class="text-gray-600">We work in short, focused sprints, delivering usable features frequently and incorporating your feedback in real-time.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Test & QA -->
+                <div class="flex flex-col md:flex-row md:justify-start items-center relative mb-12">
+                    <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                        <h3 class="text-2xl font-bold text-primary mb-2">3. Quality Assurance & Testing</h3>
+                        <p class="text-gray-600">Thorough unit testing, integration testing, and user acceptance testing (UAT) ensure a bug-free, robust product ready for launch.</p>
+                    </div>
+                    <div class="absolute right-1/2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white border-4 border-primary rounded-full z-10 hidden md:block"></div>
+                </div>
+                
+                <!-- Step 4: Deploy & Support -->
+                <div class="flex flex-col md:flex-row md:justify-end items-center relative">
+                    <div class="absolute right-1/2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white border-4 border-primary rounded-full z-10 hidden md:block"></div>
+                    <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-primary mb-2">4. Deployment & Ongoing Support</h3>
+                        <p class="text-gray-600">Seamless deployment to production, followed by monitoring, maintenance, and continuous feature development to keep you ahead.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section (Simplified placeholders) -->
+    <section class="py-20 md:py-28" id="portfolio">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-4">Selected Case Studies</h2>
+            <p class="text-xl text-gray-500 text-center mb-16">Highlights of recent projects and the business impact delivered.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 font-semibold text-xl">
+                         - B2B SaaS Platform
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">E-commerce Integration API</h3>
+                        <p class="text-gray-600">Built a high-volume, low-latency API gateway that connected a legacy inventory system with three modern e-commerce storefronts, reducing order processing time by 40%.</p>
+                        <span class="inline-block mt-3 bg-secondary/10 text-secondary text-xs font-semibold px-3 py-1 rounded-full">Node.js, AWS Lambda, MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 font-semibold text-xl">
+                         - Mobile Analytics Dashboard
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Real-Time Data Analytics Dashboard</h3>
+                        <p class="text-gray-600">Developed a responsive, interactive dashboard using React and D3.js, providing executive teams with real-time insights into user behavior and operational metrics.</p>
+                        <span class="inline-block mt-3 bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">React, D3.js, PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 md:py-28 bg-primary/10" id="testimonials">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-12">Trusted by Industry Leaders</h2>
+            
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl">
+                <!-- Testimonial Content (Static for this example) -->
+                <p class="text-xl italic text-gray-700 leading-relaxed">
+                    "AcmeDev's deep technical expertise and commitment to quality were instrumental in launching our core product on time and under budget. Their architecture choices have allowed us to scale effortlessly."
+                </p>
+                <div class="mt-8">
+                    <p class="text-lg font-bold text-gray-900">Jane Doe</p>
+                    <p class="text-primary font-medium">CTO, GlobalTech Corp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 md:py-28" id="contact">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-4">Ready to Build Something Great?</h2>
+            <p class="text-xl text-gray-500 text-center mb-10">Let's discuss your project goals and how custom software can deliver massive value.</p>
+            
+            <form action="mailto:your.email@example.com" method="POST" enctype="text/plain" class="space-y-6 bg-white p-8 rounded-xl shadow-xl border-t-4 border-primary">
+                <div>
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <input type="text" name="subject" placeholder="Project Name / Subject" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <textarea name="message" rows="5" placeholder="Tell us about your project..." required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary resize-none"></textarea>
+                </div>
+                <button type="submit" class="cta-button w-full px-8 py-4 border border-transparent text-lg font-bold rounded-xl shadow-lg text-white bg-secondary hover:bg-emerald-600 transition duration-150">
+                    Send Inquiry
+                </button>
+                <p class="text-sm text-gray-500 mt-4">
+                    We typically respond within 24 hours.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
+            <div class="mb-6">
+                <a href="#" class="text-3xl font-extrabold text-primary tracking-tight">AcmeDev</a>
+                <p class="mt-2 text-gray-400">Custom Software, Simplified.</p>
+            </div>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <!-- Social Links (Replace # with actual links) -->
+                <a href="#" class="text-gray-400 hover:text-primary transition duration-150">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.731.084-.678.084-.678 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.118-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.771.84 1.231 1.91 1.231 3.221 0 4.609-2.807 5.624-5.479 5.923.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.8 1.101C20.575 21.79 24 17.3 24 12 24 5.373 18.627 0 12 0Z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition duration-150">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4.01c-.75-.38-1.55-.65-2.39-.78 1.02-.61 1.8-1.58 2.16-2.73-.95.57-2.01.97-3.13 1.19-.9-.96-2.18-1.56-3.62-1.56-2.74 0-4.97 2.23-4.97 4.97 0 .39.04.77.11 1.13-4.13-.21-7.79-2.18-10.24-5.22-.43.74-.67 1.6-.67 2.5 0 1.72.87 3.24 2.19 4.12-.81-.02-1.56-.25-2.22-.61v.06c0 2.41 1.72 4.43 4.02 4.89-.42.11-.87.17-1.33.17-.32 0-.64-.03-.95-.09.64 2 2.5 3.45 4.7 3.49-1.7 1.34-3.85 2.14-6.18 2.14-.4 0-.79-.02-1.18-.07 2.22 1.43 4.86 2.26 7.7 2.26 9.24 0 14.3-7.66 14.3-14.3 0-.22 0-.44-.02-.66.98-.71 1.83-1.6 2.5-2.61Z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-primary transition duration-150">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.2c.522.095.717-.227.717-.504v-1.734c-2.83.614-3.424-1.36-3.424-1.36-.46-.994-1.12-1.26-1.12-1.26-.91-.62.07-.607.07-.607 1.004.07 1.532 1.034 1.532 1.034.89 1.53 2.342 1.09 2.91.833.092-.647.35-1.09.636-1.342-2.22-.252-4.555-1.11-4.555-4.956 0-1.09.39-1.98.98-2.67-.1-.252-.42-1.26.09-2.646 0 0 .79-.27 2.57 1.026.75-.21 1.53-.314 2.31-.318 1.77.004 3.55.108 4.3.318 1.78-1.296 2.57-1.026 2.57-1.026.51 1.386.19 2.394.09 2.646.59.69 1 1.58 1 2.67 0 3.856-2.336 4.704-4.56 4.953.356.305.672 1.006.672 2.028v2.986c0 .277.195.6.717.503C19.364 19.855 22 16.237 22 12c0-5.523-4.477-10-10-10Z" clip-rule="evenodd"/></svg>
+                </a>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-sm text-gray-500">&copy; 2024 AcmeDev Solutions. All rights reserved. | Built with HTML & Tailwind CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for smooth scrolling (optional but nice) -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Check if the link is a standard hash link and not the mobile menu close/open
+                if(this.getAttribute('href').length > 1) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Simple testimonial rotator (optional, but demonstrates basic JS)
+        // Since we only have one testimonial, this is placeholder code.
+        const testimonialElement = document.querySelector('#testimonials .bg-white p.italic');
+        if (testimonialElement) {
+            const testimonials = [
+                { text: "AcmeDev's deep technical expertise and commitment to quality were instrumental in launching our core product on time and under budget. Their architecture choices have allowed us to scale effortlessly.", author: "Jane Doe, CTO, GlobalTech Corp" },
+                { text: "The team delivered an incredibly polished and fast mobile app that significantly boosted our user retention. Communication was excellent throughout the entire project.", author: "Mark Smith, Founder, RetailFocus" },
+                { text: "We received top-tier consulting that helped us pivot our entire cloud strategy, saving us thousands monthly while improving performance. Highly recommend their auditing service.", author: "Sarah Lee, Product Lead, DataStream" }
+            ];
+
+            let currentTestimonial = 0;
+
+            function rotateTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                const next = testimonials[currentTestimonial];
+                
+                // Fade out
+                testimonialElement.style.opacity = 0;
+                
+                setTimeout(() => {
+                    // Update content
+                    testimonialElement.textContent = next.text;
+                    document.querySelector('#testimonials .font-bold').textContent = next.author.split(',')[0];
+                    document.querySelector('#testimonials .font-medium').textContent = next.author.split(',')[1].trim();
+                    
+                    // Fade in
+                    testimonialElement.style.opacity = 1;
+                }, 500); // Wait for fade out
+            }
+
+            // Start rotation every 8 seconds
+            setInterval(rotateTestimonial, 8000); 
+        }
+    </script>
+</body>
+</html>
