@@ -89,22 +89,56 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
         
-        /* Screenshot Placeholder Styling */
-        .screenshot-placeholder {
+        /* Screenshot Styling */
+        .screenshot-container {
+            position: relative;
             height: 300px;
+            border-radius: 0.75rem;
+            overflow: hidden;
             background-color: #e5e7eb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .screenshot-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .dark .screenshot-container {
+            background-color: #374151;
+        }
+
+        .dark .screenshot-container:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .screenshot {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.75rem;
+        }
+
+        .screenshot-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #6b7280;
-            font-size: 1.25rem;
-            border-radius: 0.75rem;
-            border: 2px dashed #9ca3af;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        .dark .screenshot-placeholder {
-            background-color: #374151;
-            color: #9ca3af;
-            border-color: #4b5563;
+
+        .screenshot-container:hover .screenshot-overlay {
+            opacity: 1;
+        }
+
+        .zoom-icon {
+            color: white;
+            padding: 1rem;
+            border-radius: 9999px;
+            background: rgba(0, 0, 0, 0.5);
         }
     </style>
 
@@ -225,8 +259,29 @@
                 <!-- Program 1 -->
                 <div class="card-bg p-8 rounded-xl shadow-xl border-l-4 border-primary dark:bg-dark-bg grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="lg:order-2">
-                        <div class="screenshot-placeholder">
-                            [Screenshot 1 Placeholder: Main Clinical Interface]
+                        <div class="screenshot-container group cursor-pointer" onclick="openLightbox('screenshot1')">
+                            <img 
+                                src="images/screenshots/crm-interface.jpg" 
+                                alt="Smart Client Manager Interface"
+                                class="screenshot"
+                                loading="lazy"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                            />
+                            <div class="screenshot-missing flex items-center justify-center h-full text-center p-4 text-gray-500 dark:text-gray-400">
+                                <div>
+                                    <svg class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <p>Clinical Interface Screenshot<br>Click to add image</p>
+                                </div>
+                            </div>
+                            <div class="screenshot-overlay">
+                                <div class="zoom-icon">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="lg:order-1">
@@ -239,8 +294,29 @@
                 <!-- Program 2 -->
                 <div class="card-bg p-8 rounded-xl shadow-xl border-l-4 border-secondary dark:bg-dark-bg grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="lg:order-1">
-                        <div class="screenshot-placeholder">
-                            [Screenshot 2 Placeholder: Financial Dashboard & Reporting]
+                        <div class="screenshot-container group cursor-pointer" onclick="openLightbox('screenshot2')">
+                            <img 
+                                src="images/screenshots/finance-dashboard.jpg" 
+                                alt="Smart Finance Control Dashboard"
+                                class="screenshot"
+                                loading="lazy"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                            />
+                            <div class="screenshot-missing flex items-center justify-center h-full text-center p-4 text-gray-500 dark:text-gray-400">
+                                <div>
+                                    <svg class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <p>Financial Dashboard Screenshot<br>Click to add image</p>
+                                </div>
+                            </div>
+                            <div class="screenshot-overlay">
+                                <div class="zoom-icon">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="lg:order-2">
@@ -253,8 +329,29 @@
                 <!-- Program 3 -->
                 <div class="card-bg p-8 rounded-xl shadow-xl border-l-4 border-yellow-500 dark:bg-dark-bg grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="lg:order-2">
-                        <div class="screenshot-placeholder">
-                            [Screenshot 3 Placeholder: HR & Employee Management]
+                        <div class="screenshot-container group cursor-pointer" onclick="openLightbox('screenshot3')">
+                            <img 
+                                src="images/screenshots/hr-dashboard.jpg" 
+                                alt="Smart People Management Dashboard"
+                                class="screenshot"
+                                loading="lazy"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                            />
+                            <div class="screenshot-missing flex items-center justify-center h-full text-center p-4 text-gray-500 dark:text-gray-400">
+                                <div>
+                                    <svg class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <p>HR Dashboard Screenshot<br>Click to add image</p>
+                                </div>
+                            </div>
+                            <div class="screenshot-overlay">
+                                <div class="zoom-icon">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="lg:order-1">
@@ -408,6 +505,16 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-gray-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <img id="lightbox-image" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg" src="" alt="Screenshot Preview" />
+    </div>
+
     <!-- JavaScript Logic -->
     <script>
         // --- Tailwind Configuration (must be before dark mode logic) ---
@@ -482,6 +589,39 @@
             }
         }
         
+        // --- Screenshot Lightbox ---
+        function openLightbox(id) {
+            const img = document.querySelector(`[onclick="openLightbox('${id}')"] img`);
+            if (img && !img.style.display) { // Only open if image exists and is visible
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-image');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.style.display = 'flex';
+                // Prevent page scrolling when lightbox is open
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox')?.addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
         // --- Smooth Scrolling ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
