@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <!-- Automatic dark mode based on system preference -->
+    <script>
+        (function() {
+            // Initial check
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (e.matches) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            });
+        })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Loop | Comprehensive Clinic Management System (ERP, CRM, HR, POS)</title>
@@ -100,20 +121,7 @@
                 <a href="#contact" class="text-white bg-secondary px-4 py-2 rounded-lg font-semibold hover:bg-teal-600 transition duration-150 shadow-md">Request Demo</a>
             </nav>
 
-            <div class="flex items-center space-x-4">
-                <!-- Dark Mode Toggle -->
-                <button 
-                    id="darkModeToggle" 
-                    onclick="toggleDarkMode()" 
-                    class="p-2 rounded-full text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-dark-bg focus:outline-none"
-                    aria-label="Toggle Dark Mode"
-                >
-                    <span id="dark-mode-icon">
-                        <!-- Initial icon placeholder, set by JS on load -->
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10c0-1.554-.356-3.04-.984-4.385A.75.75 0 0 1 20.323 7c.43 1.345.677 2.76.677 4.25 0 4.694-3.806 8.5-8.5 8.5S3.5 16.694 3.5 12c0-4.694 3.806-8.5 8.5-8.5a8.5 8.5 0 0 1 8.358 6.677.75.75 0 0 1-1.144-.808A10 10 0 0 0 12 2.25Z" fill-rule="evenodd" clip-rule="evenodd" /></svg>
-                    </span>
-                </button>
-
+            <div class="flex items-center">
                 <!-- Mobile Menu Button (Hamburger) -->
                 <button class="md:hidden text-gray-600 hover:text-primary focus:outline-none dark:text-gray-300 dark:hover:text-secondary" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -420,37 +428,7 @@
         // --- Dark Mode Logic ---
         const DARK_MODE_KEY = 'darkModePreference';
 
-        function checkDarkMode() {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            let currentMode = localStorage.getItem(DARK_MODE_KEY);
-
-            if (currentMode === 'dark' || (!currentMode && prefersDark)) {
-                document.documentElement.classList.add('dark');
-                return true;
-            } else if (currentMode === 'light') {
-                document.documentElement.classList.remove('dark');
-                return false;
-            }
-            return false;
-        }
-        
-        function updateToggleIcon(isDark) {
-            const iconContainer = document.getElementById('dark-mode-icon');
-            if (!iconContainer) return;
-
-            // Sun icon (Light)
-            const sunIcon = '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.75 9h2.25a.75.75 0 0 1 0 1.5h-2.25a.75.75 0 0 1 0-1.5ZM4.5 9h2.25a.75.75 0 0 1 0 1.5H4.5a.75.75 0 0 1 0-1.5ZM12 18.75a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0v-2.25a.75.75 0 0 1 .75-.75ZM5.636 5.636a.75.75 0 0 1 1.06 0l1.592 1.591a.75.75 0 0 1-1.06 1.061L5.636 6.697a.75.75 0 0 1 0-1.061ZM16.97 7.227a.75.75 0 0 1 1.06 0l1.591-1.591a.75.75 0 1 1 1.061 1.06l-1.591 1.592a.75.75 0 0 1-1.06-1.061Z" fill-rule="evenodd" clip-rule="evenodd" /></svg>'; 
-            // Moon icon (Dark)
-            const moonIcon = '<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10c0-1.554-.356-3.04-.984-4.385A.75.75 0 0 1 20.323 7c.43 1.345.677 2.76.677 4.25 0 4.694-3.806 8.5-8.5 8.5S3.5 16.694 3.5 12c0-4.694 3.806-8.5 8.5-8.5a8.5 8.5 0 0 1 8.358 6.677.75.75 0 0 1-1.144-.808A10 10 0 0 0 12 2.25Z" fill-rule="evenodd" clip-rule="evenodd" /></svg>'; 
-            
-            iconContainer.innerHTML = isDark ? sunIcon : moonIcon;
-        }
-
-        function toggleDarkMode() {
-            const isDark = document.documentElement.classList.toggle('dark');
-            localStorage.setItem(DARK_MODE_KEY, isDark ? 'dark' : 'light');
-            updateToggleIcon(isDark);
-        }
+        // Theme automatically follows system preference
         
         // --- Testimonial Logic ---
         const testimonials = [
