@@ -469,10 +469,7 @@
 
 
         // --- Initialization on Load ---
-        window.onload = function() {
-            const isDark = checkDarkMode();
-            updateToggleIcon(isDark);
-            
+        window.onload = function() {   
             // Set initial testimonial text
             const initialTestimonial = testimonials[0];
             document.getElementById('testimonial-text').textContent = `"${initialTestimonial.text}"`;
