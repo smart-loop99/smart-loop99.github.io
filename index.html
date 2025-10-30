@@ -422,23 +422,18 @@
             <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white sm:text-4xl mb-4">Ready to Transform Your Clinic?</h2>
             <p class="text-xl text-gray-500 dark:text-gray-400 text-center mb-10">Fill out the form below to request a personalized demo or discuss deployment options.</p>
             
-            <!-- 
-                HOSTING NOTE: Since this is a static site (like GitHub Pages), you cannot run a backend server to process forms.
-                We highly recommend using a free third-party service like Formspree or Netlify Forms to receive email submissions.
-                
-                ACTION NEEDED:
-                1. Sign up for Formspree (or similar).
-                2. Replace the placeholder URL below with your unique Formspree endpoint (e.g., https://formspree.io/f/xbjnopqo).
-            -->
             <form action="https://formspree.io/f/mdkpgapv" method="POST" class="space-y-6 card-bg p-8 rounded-xl shadow-xl border-t-4 border-primary dark:bg-dark-card dark:shadow-2xl">
                 <div>
                     <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 </div>
                 <div>
-                    <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 </div>
                 <div>
                     <input type="text" name="subject" placeholder="Clinic Name / Subject" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                </div>
+                <div>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 </div>
                 <div>
                     <textarea name="message" rows="5" placeholder="Tell us about your clinic's needs and preferred deployment..." required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary resize-none dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
