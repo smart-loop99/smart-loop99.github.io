@@ -1,0 +1,24 @@
+name: Auto deploy (cache-bust index.html)
+
+on:
+  push:
+    branches:
+      - main    # or the branch you use for Pages
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inject build time into index.html
+        run: |
+          TS=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "Injecting build time: $TS"
+          sed -i "s/__BUILD_TIME__/$TS/g" index.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
