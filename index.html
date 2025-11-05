@@ -172,52 +172,45 @@
             <a href="#contact" class="block px-4 py-2 text-white bg-primary text-center hover:bg-blue-800">Request Demo</a>
         </div>
     </header>
-    <!-- Responsive GIF Banner - NEW SECTION -->
-    <div class="relative w-full aspect-video lg:h-[75vh] overflow-hidden bg-gray-900">
-        <!-- 1. GIF/Image Layer (Optimized for Mobile) -->
-        <!-- SOURCE UPDATED TO YOUR SPECIFIED PATH: ./images/screenshots/Background.gif -->
-        <img
-            src="./images/screenshots/Background.gif"
-            alt="Animated demonstration of the integrated clinic management system"
-            loading="lazy"
-            class="w-full h-full object-cover transition-all duration-700 transform hover:scale-[1.03] will-change-transform"
-        />
+    <!-- Responsive GIF Banner -->
+    <section class="relative w-full overflow-hidden">
+        <div class="relative w-full aspect-video lg:h-[75vh]">
+            <!-- 1. GIF/Image Layer -->
+            <img
+                src="./images/screenshots/Background.gif"
+                alt="Animated demonstration of the integrated clinic management system"
+                loading="lazy"
+                class="w-full h-full object-cover transition-all duration-700 transform hover:scale-[1.03] will-change-transform"
+            />
 
-        <!-- 2. Dark Gradient Overlay for Contrast -->
-        <!-- Added a stronger gradient from the bottom to ensure content visibility -->
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/30 to-transparent"></div>
+            <!-- 2. Gradient Overlay: subtle in light mode, stronger in dark mode -->
+            <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/30 via-white/10 to-transparent dark:from-gray-900/85 dark:via-gray-900/30 dark:to-transparent"></div>
 
-        <!-- 3. Floating Content Layer -->
-        <!-- items-end ensures content is pushed to the bottom on narrow screens -->
-        <div class="absolute inset-0 flex items-end lg:items-center justify-center p-2 sm:p-4 pb-4 lg:pb-4">
-            <div class="max-w-4xl w-full text-center bg-white/10 backdrop-blur-md p-4 sm:p-6 md:p-10 rounded-xl shadow-3xl border border-white/20">
-                
-                <!-- MERGED CONTENT START -->
-                <p class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-indigo-300 mb-1">
-                    4 Systems in 1 Platform
-                </p>
-                <h2 class="text-xl sm:text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-2">
-                    The Integrated Clinic Solution: <span class="text-indigo-400 block md:inline">4 Systems in 1.</span>
-                </h2>
-                <p class="mt-1 text-xs sm:text-lg text-gray-200 max-w-2xl mx-auto hidden sm:block">
-                    ERP + CRM + HR + POS unified into a single, highly accurate, yet remarkably easy-to-use platform. Achieve precision without complexity.
-                </p>
-                <!-- MERGED CONTENT END -->
-
-                <div class="mt-3 sm:mt-6 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="inline-flex items-center justify-center px-3 sm:px-6 py-1.5 sm:py-3 text-xs sm:text-base font-bold rounded-full shadow-xl text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
-                        Request a Demo
-                    </a>
-                    <a href="#services" class="inline-flex items-center justify-center px-3 sm:px-6 py-1.5 sm:py-3 text-xs sm:text-base font-bold rounded-full text-white bg-white/20 hover:bg-white/30 border border-white/30 backdrop-blur-sm transition duration-300">
-                        Explore Core Features
-                    </a>
+            <!-- 3. Floating Content Layer -->
+            <div class="absolute inset-0 flex items-end lg:items-center justify-center p-2 sm:p-4 pb-4 lg:pb-4">
+                <div class="max-w-4xl w-full text-center bg-white/80 dark:bg-white/10 backdrop-blur-md p-4 sm:p-6 md:p-10 rounded-xl shadow-3xl border border-white/20">
+                    <p class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-indigo-700 dark:text-indigo-300 mb-1">
+                        4 Systems in 1 Platform
+                    </p>
+                    <h2 class="text-xl sm:text-3xl lg:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-2">
+                        The Integrated Clinic Solution: <span class="text-indigo-600 dark:text-indigo-400 block md:inline">4 Systems in 1.</span>
+                    </h2>
+                    <p class="mt-1 text-xs sm:text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto hidden sm:block">
+                        ERP + CRM + HR + POS unified into a single, highly accurate, yet remarkably easy-to-use platform. Achieve precision without complexity.
+                    </p>
+                    <div class="mt-3 sm:mt-6 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="inline-flex items-center justify-center px-3 sm:px-6 py-1.5 sm:py-3 text-xs sm:text-base font-bold rounded-full shadow-xl text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                            Request a Demo
+                        </a>
+                        <a href="#services" class="inline-flex items-center justify-center px-3 sm:px-6 py-1.5 sm:py-3 text-xs sm:text-base font-bold rounded-full text-indigo-700 bg-white/20 hover:bg-white/30 border border-indigo-100 backdrop-blur-sm transition duration-300 dark:text-white dark:bg-white/10 dark:border-white/20">
+                            Explore Core Features
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- End Responsive GIF Banner -->
-    
-    <!-- ORIGINAL HERO SECTION REMOVED to avoid duplication. -->
 
     <!-- Services/Features Section -->
     <section class="py-20 md:py-28 page-bg dark:bg-dark-bg" id="services">
