@@ -172,45 +172,121 @@
             <a href="#contact" class="block px-4 py-2 text-white bg-primary text-center hover:bg-blue-800">Request Demo</a>
         </div>
     </header>
-    <!-- Responsive GIF Banner -->
-    <section class="relative w-full overflow-hidden">
-        <div class="relative w-full aspect-video lg:h-[75vh]">
-            <!-- 1. GIF/Image Layer -->
-            <img
-                src="./images/screenshots/Background.gif"
-                alt="Animated demonstration of the integrated clinic management system"
-                loading="lazy"
-                class="w-full h-full object-cover transition-all duration-700 transform hover:scale-[1.03] will-change-transform"
-            />
+    <!-- Responsive GIF Banner (Mobile-First Optimized) -->
+    <section class="relative w-full overflow-hidden bg-black">
+        <!-- Container with aspect ratio control -->
+        <div class="relative w-full">
+            <!-- Mobile-first container (shorter height) -->
+            <div class="relative w-full h-[50vh] md:h-[60vh] lg:h-[75vh] flex items-center justify-center">
+                <!-- GIF Background with responsive sizing -->
+                <div class="absolute inset-0 w-full h-full">
+                    <img
+                        src="./images/screenshots/Background.gif"
+                        alt="Animated demonstration of the integrated clinic management system"
+                        loading="lazy"
+                        class="w-full h-full 
+                               object-cover md:object-contain lg:object-cover 
+                               transform transition-transform duration-700 hover:scale-105"
+                    />
+                </div>
 
-            <!-- 2. Gradient Overlay: subtle in light mode, stronger in dark mode -->
-            <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/30 via-white/10 to-transparent dark:from-gray-900/85 dark:via-gray-900/30 dark:to-transparent"></div>
+                <!-- Gradient overlay: subtle in light mode, stronger in dark -->
+                <div class="absolute inset-0 bg-gradient-to-t 
+                            from-black/60 via-black/30 to-transparent 
+                            dark:from-black/80 dark:via-black/50 dark:to-transparent
+                            transition-opacity duration-500"></div>
 
-            <!-- 3. Floating Content Layer -->
-            <div class="absolute inset-0 flex items-end lg:items-center justify-center p-2 sm:p-4 pb-4 lg:pb-4">
-                <div class="max-w-4xl w-full text-center bg-white/80 dark:bg-white/10 backdrop-blur-md p-4 sm:p-6 md:p-10 rounded-xl shadow-3xl border border-white/20">
-                    <p class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-indigo-700 dark:text-indigo-300 mb-1">
+                <!-- Floating Content Box -->
+                <div id="hero-overlay" 
+                     class="relative z-10 w-[94%] max-w-xl mx-auto 
+                            bg-white/90 dark:bg-gray-900/90 
+                            backdrop-blur-md rounded-xl shadow-2xl 
+                            border border-white/20 
+                            p-4 sm:p-6 md:p-8
+                            flex flex-col items-center justify-center
+                            transition-all duration-500 transform">
+                    <!-- Close Button -->
+                    <button onclick="toggleHeroOverlay()"
+                            class="absolute -top-2 -right-2 
+                                   w-8 h-8 
+                                   bg-white dark:bg-gray-800 
+                                   rounded-full 
+                                   flex items-center justify-center 
+                                   shadow-lg
+                                   border border-gray-200 dark:border-gray-700
+                                   text-gray-600 dark:text-gray-300
+                                   hover:bg-gray-100 dark:hover:bg-gray-700
+                                   transition-colors duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                             class="h-5 w-5" 
+                             viewBox="0 0 20 20" 
+                             fill="currentColor">
+                            <path fill-rule="evenodd" 
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" 
+                                  clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <!-- Label -->
+                    <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider 
+                              text-indigo-700 dark:text-indigo-300 mb-2
+                              text-center">
                         4 Systems in 1 Platform
                     </p>
-                    <h2 class="text-xl sm:text-3xl lg:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-2">
-                        The Integrated Clinic Solution: <span class="text-indigo-600 dark:text-indigo-400 block md:inline">4 Systems in 1.</span>
+
+                    <!-- Title -->
+                    <h2 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl 
+                               font-extrabold text-gray-900 dark:text-white 
+                               leading-tight mb-3
+                               text-center mx-auto max-w-lg">
+                        The Integrated Clinic Solution
+                        <span class="text-indigo-600 dark:text-indigo-400 block sm:inline">
+                            4 Systems in 1
+                        </span>
                     </h2>
-                    <p class="mt-1 text-xs sm:text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto hidden sm:block">
-                        ERP + CRM + HR + POS unified into a single, highly accurate, yet remarkably easy-to-use platform. Achieve precision without complexity.
+
+                    <!-- Description -->
+                    <p class="text-sm sm:text-base md:text-lg 
+                             text-gray-700 dark:text-gray-200 
+                             max-w-2xl mx-auto mb-6
+                             text-center px-2">
+                        ERP + CRM + HR + POS unified into one precise, easy-to-use platform.
                     </p>
-                    <div class="mt-3 sm:mt-6 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-                        <a href="#contact" class="inline-flex items-center justify-center px-3 sm:px-6 py-1.5 sm:py-3 text-xs sm:text-base font-bold rounded-full shadow-xl text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+
+                    <!-- Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4
+                                w-full sm:w-auto">
+                        <a href="#contact" 
+                           class="w-full sm:w-auto px-8 py-3 
+                                  text-sm sm:text-base font-bold rounded-full 
+                                  text-white bg-indigo-600 hover:bg-indigo-700 
+                                  shadow-lg hover:shadow-xl 
+                                  transform hover:scale-105 
+                                  transition duration-300
+                                  text-center min-w-[160px]">
                             Request a Demo
                         </a>
-                        <a href="#services" class="inline-flex items-center justify-center px-3 sm:px-6 py-1.5 sm:py-3 text-xs sm:text-base font-bold rounded-full text-indigo-700 bg-white/20 hover:bg-white/30 border border-indigo-100 backdrop-blur-sm transition duration-300 dark:text-white dark:bg-white/10 dark:border-white/20">
+                        <a href="#services" 
+                           class="w-full sm:w-auto px-8 py-3 
+                                  text-sm sm:text-base font-bold rounded-full 
+                                  text-indigo-700 dark:text-white 
+                                  bg-white/50 hover:bg-white/60 
+                                  dark:bg-white/10 dark:hover:bg-white/20 
+                                  border border-indigo-100 dark:border-white/20 
+                                  backdrop-blur-sm shadow-lg hover:shadow-xl 
+                                  transform hover:scale-105 
+                                  transition duration-300
+                                  text-center min-w-[160px]">
                             Explore Core Features
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+        </div>
+    </div>
     </section>
-    <!-- End Responsive GIF Banner -->
+
 
     <!-- Services/Features Section -->
     <section class="py-20 md:py-28 page-bg dark:bg-dark-bg" id="services">
@@ -544,6 +620,53 @@
                         'dark-card': '#111827',
                     }
                 }
+            }
+        }
+
+        // --- Hero Overlay Toggle ---
+        function toggleHeroOverlay() {
+            const overlay = document.getElementById('hero-overlay');
+            const gradient = document.querySelector('.bg-gradient-to-t');
+            
+            if (overlay.style.opacity !== '0') {
+                // Hide overlay
+                overlay.style.opacity = '0';
+                overlay.style.transform = 'scale(0.95)';
+                gradient.style.opacity = '0';
+                
+                // Disable pointer events after animation
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    gradient.style.display = 'none';
+                }, 500);
+
+                // Add show overlay button
+                const showButton = document.createElement('button');
+                showButton.id = 'show-overlay';
+                showButton.className = 'fixed bottom-4 right-4 z-20 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm p-3 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200';
+                showButton.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                `;
+                showButton.onclick = toggleHeroOverlay;
+                document.body.appendChild(showButton);
+            } else {
+                // Show overlay
+                overlay.style.display = 'flex';
+                gradient.style.display = 'block';
+                
+                // Trigger reflow
+                overlay.offsetHeight;
+                
+                // Fade in
+                overlay.style.opacity = '1';
+                overlay.style.transform = 'scale(1)';
+                gradient.style.opacity = '1';
+                
+                // Remove show button
+                const showButton = document.getElementById('show-overlay');
+                if (showButton) showButton.remove();
             }
         }
         
