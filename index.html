@@ -172,22 +172,30 @@
             <a href="#contact" class="block px-4 py-2 text-white bg-primary text-center hover:bg-blue-800">Request Demo</a>
         </div>
     </header>
-    <!-- Responsive GIF Banner (Mobile-First Optimized) -->
-    <section class="relative w-full overflow-hidden bg-black">
+    <!-- Responsive Video Banner (Mobile-First Optimized) -->
+    <section class="relative w-full overflow-hidden">
         <!-- Container with aspect ratio control -->
-        <div class="relative w-full">
-            <!-- Mobile-first container (shorter height) -->
-            <div class="relative w-full h-[50vh] md:h-[60vh] lg:h-[75vh] flex items-center justify-center">
-                <!-- GIF Background with responsive sizing -->
+        <div class="relative w-full" style="aspect-ratio: 16/9;">
+            <!-- Mobile-first container with responsive height -->
+            <div class="relative w-full h-full flex items-center justify-center overflow-hidden">
+                <!-- Video Background with responsive sizing -->
                 <div class="absolute inset-0 w-full h-full">
-                    <img
-                        src="./images/screenshots/Background.gif"
-                        alt="Animated demonstration of the integrated clinic management system"
-                        loading="lazy"
-                        class="w-full h-full 
-                               object-cover md:object-contain lg:object-cover 
-                               transform transition-transform duration-700 hover:scale-105"
-                    />
+                    <video
+                        id="hero-video"
+                        autoplay loop muted playsinline
+                        poster="./images/screenshots/poster.jpg"
+                        class="w-full h-full object-contain md:object-cover transform transition-transform duration-700 hover:scale-105"
+                    >
+                        <!-- Desktop 1080p -->
+                        <source src="./images/screenshots/Background-1080.mp4" type="video/mp4" media="(min-width: 1024px)">
+                        <!-- Tablet 720p -->
+                        <source src="./images/screenshots/Background-720.mp4" type="video/mp4" media="(min-width: 768px)">
+                        <!-- Mobile 360p -->
+                        <source src="./images/screenshots/Background-360.webm" type="video/webm" media="(max-width: 767px)">
+                        <source src="./images/screenshots/Background-360.mp4" type="video/mp4" media="(max-width: 767px)">
+                        <!-- Fallback for older browsers -->
+                        <img src="./images/screenshots/Background.gif" alt="Animated demonstration of the integrated clinic management system" class="w-full h-full object-cover">
+                    </video>
                 </div>
 
                 <!-- Gradient overlay: subtle in light mode, stronger in dark -->
